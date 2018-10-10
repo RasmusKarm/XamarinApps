@@ -16,7 +16,7 @@ namespace WeatherApp.Core
             var response = await client.GetAsync(queryString);
 
             dynamic data = null;
-            if(response != null)
+            if (response != null)
             {
                 string json = response.Content.ReadAsStringAsync().Result;
                 data = JsonConvert.DeserializeObject(json);

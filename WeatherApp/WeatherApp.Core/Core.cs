@@ -10,7 +10,7 @@ namespace WeatherApp.Core
         public static async Task<Weather> GetWeather(string zipCode)
         {
             string key = "a519d2565f58343b5f157d056e658aca";
-            string queryString = "http://api.openweathermap.org/data/2.5/weather?q=London&APPID="+key;
+            string queryString = "http://api.openweathermap.org/data/2.5/weather?q=London&APPID=" + key + "&units=metric";
 
             dynamic results = await DataService.GetDataFromService(queryString).ConfigureAwait(false);
             var weather = new Weather();
